@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./style.css">
+    <title>Live Weather Application</title>
+</head>
+<body>
+    <div class="Main">
+        <div class="SideNav">
+            <span>Nav</span>
+            <span>Nav</span>
+            <span>Nav</span>
+            <span>Nav</span>
+            <span>Nav</span>
+            <span>Nav</span>
+            <span>Nav</span>
+        </div>
+        <div class="MainDashboard">
+            <form onsubmit="getLiveWeather(); return false">
+                <div class="searchBox">
+                    <input class="searchInput" type="text" id="UserInput" name="" placeholder="Search" required="Please Input City Name">
+                    <button class="searchButton" type="submit"><i class="material-icons">search</i></button>
+                </div>
+            </form>
+        </div>
+        <div class="TodaysHighlight">
+            <h3>Today's Highlight</h3>
+            <div class="FirstRow">
+                <div class="WindStatus">
+                    <span>Wind Status</span>
+                </div>
+                <div class="UVIndex">
+                    <span>UV Index</span>
+                </div>
+                <div class="SunriseSunset">
+                    <span>Sunrise and Sunset</span>
+                </div>
+            </div>
+            <div class="SecondRow">
+                <div class="Humidity">
+                    <span>Humidity</span>
+                </div>
+                <div class="Visibility">
+                    <span>Visibility</span>
+                </div>
+                <div class="FeelsLike">
+                    <span>Feels Like</span>
+                </div>
+            </div>
+        </div>
+        </div>
+    </div>
+    <script src ="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <script>
+        let getLiveWeather = () => {
+            let UserInput = document.querySelector('#UserInput').value
+            axios.get(`https://api.openweathermap.org/data/2.5/weather?&appid=dc09701a59ef1086a22811caa497b1d7&q=${UserInput}`)
+                .then(function (response)
+                {
+                    console.log("Getting Response");
+                    console.log(response.data);
+                })
+                .catch(function(error)
+                {
+                    console.log(error);
+                })
+                
+        }
+    </script>
+</body>
+</html>

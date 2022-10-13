@@ -1,0 +1,112 @@
+.Main {
+    display: flex;
+    flex-direction: row;
+    flex-flow: row;
+    border-radius: 20px;
+    background-color: rgb(20, 20, 20);
+}
+.SideNav {
+    margin: 20px;
+    padding: 20px;
+    max-width: 30px;
+    border-radius: 20px;
+    background-color: rgb(80, 80, 80);
+    color: white;
+}
+.MainDashboard {
+   width: 300px;
+   height: 550px;
+   margin: 20px;
+   padding: 20px;
+   border-radius: 20px;
+   background-color: rgb(80, 80, 80);
+}
+
+.MainDashboard> .searchBox {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform:  translate(-50%,50%);
+    background: #2f3640;
+    height: 40px;
+    border-radius: 40px;
+    padding: 10px;
+
+}
+
+.searchBox:hover > .searchInput {
+    width: 240px;
+    padding: 0 6px;
+}
+
+.searchBox:hover > .searchButton {
+  background: white;
+  color : #2f3640;
+}
+
+.searchButton {
+    color: white;
+    float: right;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background: #2f3640;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: 0.4s;
+}
+
+.searchInput {
+    border:none;
+    background: none;
+    outline:none;
+    float:left;
+    padding: 0px;
+    border-radius: 40px;
+    color: white;
+    font-size: 16px;
+    transition: 0.4s;
+    line-height: 40px;
+    width: 0px;
+
+}
+.TodaysHighlight {
+    margin: 20px;
+    padding: 20px;
+    height: 550px;
+    width: 800px;
+    border-radius: 20px;
+    background-color: rgb(80, 80, 80);
+}
+.TodaysHighlight > .FirstRow {
+    display: flex;
+    flex-direction: column;
+    flex-flow: row;
+    height: 300px;
+
+}
+.TodaysHighlight > .SecondRow {
+    display: flex;
+    flex-direction: column;
+    flex-flow: row;
+    height: 150px;
+}
+
+.TodaysHighlight > .FirstRow> .WindStatus, .UVIndex, .SunriseSunset{
+    margin: 10px;
+    padding: 10px;
+    width: 250px;
+    border-radius: 20px;
+    background-color: rgb(35, 35, 35);
+}
+.TodaysHighlight > .SecondRow> .Humidity, .Visibility, .FeelsLike{
+    margin: 10px;
+    padding: 10px;
+    width: 250px;
+    border-radius: 20px;
+    background-color: rgb(35, 35, 35);
+}
+h1, h2, h3, h4, h5, h6, span {
+    color: whitesmoke;
+}

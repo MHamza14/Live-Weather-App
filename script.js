@@ -17,9 +17,9 @@ let getLiveWeather = () => {
             `<h2>Weather in ${response.data.name}</h2>
             
             <img src='https://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png' class='weather_icon' />
-            <div><h2>Temp: ${temp}</h2></div>
-            <div><h4>Minimum Temprature: ${mintemp}</h4></div>
-            <div><h4>Maximum Temprature: ${maxtemp}</h4></div>
+            <div><h2>Temp: ${temp}°C</h2></div>
+            <div><h4>Minimum Temprature: ${mintemp}°C</h4></div>
+            <div><h4>Maximum Temprature: ${maxtemp}°C</h4></div>
             <div>${response.data.name}, ${ response.data.sys.country}</div>
             <div>${date}</div>
             <div>${time}</div>

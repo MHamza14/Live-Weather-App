@@ -5,70 +5,66 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" integrity="sha512-9usAa10IRO0HhonpyAIVpjrylPvoDwiPUiKdWk5t3PyolY1cOd4DSE0Ga+ri4AuTroPR5aQvXU9xC6qOPnzFeg==" crossorigin="anonymous" referrerpolicy="no-referrer" />   
     <title>Live Weather Application</title>
 </head>
 <body>
+    <script src ="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <script>src= "http://openweathermap.org/img/wn/10d@2x.png"</script>
+    <script src="./script.js"></script>
     <div class="Main">
         <div class="SideNav">
-            <span>Nav</span>
-            <span>Nav</span>
-            <span>Nav</span>
-            <span>Nav</span>
-            <span>Nav</span>
-            <span>Nav</span>
-            <span>Nav</span>
+            <br><i>Wea</i>
+            <br><br><br><br>
+            <i class="fa fa-dashboard" style="color: white;"></i>
+            <i class="fa fa-map" style="color: white;"></i>
+            <i class="fa-solid fa-location-dot" style="color: white;"></i> <br>
+            <i class="fa fa-signal" style="color: white;"></i>
+            <i class="fa fa-calendar" style="color: white;"></i>
+            <i class="fa fa-gear" style="color: white;"></i>
         </div>
-        <div class="MainDashboard">
+        <div class="MainDashboard" id="MainDashboard">
             <form onsubmit="getLiveWeather(); return false">
                 <div class="searchBox">
                     <input class="searchInput" type="text" id="UserInput" name="" placeholder="Search" required="Please Input City Name">
                     <button class="searchButton" type="submit"><i class="material-icons">search</i></button>
                 </div>
             </form>
+            <br><br>
+            <h2 class="city" >Weather </h2>
+            <img id = "" src="" alt="" class="icon">
+            <div id="description" style="color: white;"></div>
+            <br>
+            <div id="location" style="color: white;"><i class="fa-solid fa-location-dot" style="color: white;"></i></div>
+            <div id="calander" style="color: white;"><i class="fa fa-calendar" style="color: white;"></i></div>
+            
         </div>
         <div class="TodaysHighlight">
             <h3>Today's Highlight</h3>
             <div class="FirstRow">
-                <div class="WindStatus">
+                <div class="WindStatus" id="WindStatus">
                     <span>Wind Status</span>
                 </div>
-                <div class="UVIndex">
+                <div class="UVIndex" id="UVIndex">
                     <span>UV Index</span>
                 </div>
-                <div class="SunriseSunset">
+                <div class="SunriseSunset" id="SunriseSunset">
                     <span>Sunrise and Sunset</span>
                 </div>
             </div>
             <div class="SecondRow">
-                <div class="Humidity">
+                <div class="Humidity" id="Humidity">
                     <span>Humidity</span>
                 </div>
-                <div class="Visibility">
+                <div class="Visibility" id="Visibility">
                     <span>Visibility</span>
                 </div>
-                <div class="FeelsLike">
+                <div class="FeelsLike" id="FeelsLike">
                     <span>Feels Like</span>
                 </div>
             </div>
         </div>
         </div>
     </div>
-    <script src ="https://unpkg.com/axios/dist/axios.min.js"></script>
-    <script>
-        let getLiveWeather = () => {
-            let UserInput = document.querySelector('#UserInput').value
-            axios.get(`https://api.openweathermap.org/data/2.5/weather?&appid=dc09701a59ef1086a22811caa497b1d7&q=${UserInput}`)
-                .then(function (response)
-                {
-                    console.log("Getting Response");
-                    console.log(response.data);
-                })
-                .catch(function(error)
-                {
-                    console.log(error);
-                })
-                
-        }
-    </script>
 </body>
 </html>
